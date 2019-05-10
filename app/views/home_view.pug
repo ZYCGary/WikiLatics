@@ -1,0 +1,30 @@
+extends layouts/layout
+
+block content
+  div.container-fluid
+    div.row
+      div.col-md-8.col-lg-8.offset-md-2.offset-lg-2.main-heading
+        h1 WikiLatic
+        p
+          | WikiLatic is a data analytic web application for articles from Wikipedia. This application have three
+          | main functions: Overall Analytics, Individual Analytics and Author Analytics.
+        if user
+          a(href='/analytic')
+            button.btn.btn-outline-primary View Functionality
+        if !user
+          a(href='/log_in')
+            button.btn.btn-outline-primary Login For Functionality
+      div.col-lg-4.col-md-4
+        div.func
+          img(width='100%' src='images/1.jpg')
+          h2 Overall Analytic
+      div.col-lg-4.col-md-4
+        div.func
+          img(width='100%' src='images/2.jpg')
+          h2 Individual Analytic
+      div.col-lg-4.col-md-4
+        div.func
+          img(width='100%' src='images/3.jpg')
+          h2 Author Analytic
+
+

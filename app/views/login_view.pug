@@ -1,0 +1,18 @@
+extends layouts/layout
+
+block content
+  .container
+    .row
+      .col-md-8.offset-md-2
+        form(method='POST')
+          .form-group
+            label(for='username') Username
+            input.form-control#username(type='text', placeholder='Username', name='username')
+          .form-group
+            label(for='password') Password
+            input.form-control#password(type='password', placeholder='Password', name='password')
+          .form-check
+            input.form-check-input#remember-me(type='checkbox')
+            label.form-check-label(for='remember-me') Remember Me
+          div
+            button.btn.btn-primary.mt-2(type='submit') Log In

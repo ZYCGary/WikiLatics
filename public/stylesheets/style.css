@@ -1,0 +1,236 @@
+a {
+    display: block;
+    color: black !important;
+    text-decoration: none !important;
+}
+
+/*header*/
+
+.navbar-static-top {
+    border-color: #e7e7e7;
+    background-color: #fff;
+    box-shadow: 0 1px 11px 2px rgba(42, 42, 42, 0.1);
+    /*border-top: 4px solid #00b5ad;*/
+    margin-bottom: 40px;
+    margin-top: 0;
+}
+
+.nav-item {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-weight: bold;
+}
+
+.nav-item a {
+    color: white !important;
+}
+
+.navbar-brand {
+    font-family: "Bradley Hand";
+    font-size: 2em !important;
+    color: white !important;
+}
+
+/*footer*/
+
+/* Sticky footer styles */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px !important;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #000;
+}
+
+.footer .container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.footer p {
+    margin: 16px 0;
+    color: white;
+}
+
+/*Overall Analytics*/
+
+/*sidebar*/
+
+#sidebar {
+    position: fixed;
+}
+
+.panel {
+    margin-bottom: 22px;
+    background-color: #fff;
+    border: 1px solid #d3e0e9;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.panel-body {
+    padding: 15px;
+}
+
+.panel-body:before,
+.panel-body:after {
+    content: " ";
+    display: table;
+}
+
+.panel-body:after {
+    clear: both;
+}
+
+.sidebar-heading {
+    margin-top: 15px;
+    font-size: 23px;
+    display: block;
+}
+
+.sidebar-body {
+    margin: 20px;
+}
+
+/*content-right*/
+
+.content {
+    margin: 20px;
+}
+
+#content-right .content-body {
+    margin: 40px 20px;
+}
+
+.content-body h5 {
+    text-align: center;
+    font-weight: bolder;
+}
+
+.table {
+    box-shadow: 0 1px 11px 2px rgba(42, 42, 42, 0.1);
+}
+
+/*Main Page*/
+
+.func {
+    padding-bottom: 22px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #d3e0e9;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    margin-bottom: 3em;
+}
+
+img {
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+.main-heading {
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+.main-heading p {
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.login-for-funcs {
+    text-align: center;
+}
+
+/* Individual Analytic */
+
+#search-bar div h2 {
+    margin-right: 3em;
+    color: white;
+    display: inline;
+}
+
+#search-bar {
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+#search-bar > div > div {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#individual-result {
+    margin: 2em 0;
+    text-align: center;
+}
+
+#individual-result table {
+    width: 60%;
+    margin: 0 auto;
+}
+
+#individual-result h5 {
+    margin-top: 2em;
+}
+
+canvas {
+    margin: 2em auto;
+}
+
+/* msg */
+
+.suc,
+.err {
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 2em;
+    margin-top: -1.5em;
+}
+
+.suc {
+    background-color: #dff0d8;
+}
+
+.err {
+    background-color: rgb(252, 180, 180);
+}
+
+/* Author Analytic */
+
+#author-result button {
+    margin: 1em;
+}
+
+#author-result #table-2 {
+    display: none;
+}
+
+#author-result table {
+    width: 60%;
+    margin: 0 auto;
+}
+
+#author-result h2 {
+    margin-top: 2em;
+}
+
+#author-result {
+    padding-bottom: 2em;
+    text-align: center;
+}

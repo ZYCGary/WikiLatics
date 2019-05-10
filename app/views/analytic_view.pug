@@ -1,0 +1,32 @@
+extends layouts/layout
+
+block content
+  div.container-fluid
+    div.row
+      // Sidebar
+      div#sidebar.col-md-2.col-lg-2
+        div.panel
+          div.panel-body
+            a(href='#overall-analytics').sidebar-heading
+              strong Overall Analytics
+            div.sidebar-body
+              a(href='#byRevision') Article Rank By Revision
+              a(href='#byUser') Article Rank By User
+              a(href='#byHistory') Article Rank By History
+              a(href='#overall-charts') Charts
+            a(href='#individual-analytics').sidebar-heading
+              strong Individual Analytics
+            a(href='#author-analytics').sidebar-heading
+              strong Author Analytics
+
+
+      // Content-right
+      div#content-right.col-md-10.col-lg-10.offset-md-2
+        include overall
+        include individual
+        include author
+
+  script(type='text/javascript', src='/javascripts/Chart.js')
+  script(type='text/javascript', src='/javascripts/overall_javascript.js')
+  script(type='text/javascript', src='/javascripts/individual_javascript.js')
+  script(type='text/javascript', src='/javascripts/author_javascript.js')

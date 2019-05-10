@@ -1,0 +1,34 @@
+.panel
+    .panel-body
+        div#author-analytics
+            h1 Author Analytics
+            hr
+        .container
+            #search-bar.bg-secondary
+                .form-inline
+                    div
+                        h2 Find an author
+                        input.form-control#author(type='text', placeholder='Author name', name='author')
+                        input.btn.btn-outline-light#author-search-btn(type='submit', value='Search')
+
+            #author-msg.err
+            #author-result
+                button.btn.btn-success#author-switch-btn Show Timestamp
+                #table-1
+                    table.table.table-hover
+                        thead.table-primary
+                            tr
+                            th Article
+                            th Contribution
+                            th User Name
+                        tbody#table-1-tbody
+                #table-2
+                    table.table.table-hover
+                        thead.table-primary
+                            tr
+                            th Article
+                            th Revision ID
+                            th User Name
+                            th Timestamp
+                        tbody#table-2-tbody
+

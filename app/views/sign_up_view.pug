@@ -1,0 +1,25 @@
+extends layouts/layout
+
+block content
+  .container
+    .row
+      .col-md-8.offset-md-2
+        form(method='post', action='/sign_up')
+          .form-group
+            label(for='first-name') First Name
+            input.form-control#first-name(type='text', placeholder='First name', name='firstName')
+          .form-group
+            label(for='last-name') First Name
+            input.form-control#last-name(type='text', placeholder='Last name', name='lastName')
+          .form-group
+            label(for='email') Email
+            input.form-control#email(type='email', placeholder='Email', name='email')
+            small#emailHelp.form-text.text-muted We'll never share your email with anyone else.
+          .form-group
+            label(for='username') Username
+            input.form-control#username(type='text', placeholder='Username', name='username')
+          .form-group
+            label(for='password') Password
+            input.form-control#password(type='password', placeholder='Password', name='password')
+          div
+            button.btn.btn-primary.mt-2(type='submit') Sign Up

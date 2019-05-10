@@ -1,0 +1,50 @@
+.panel
+  .panel-body
+    div#individual-analytics
+      h1 Individual Analytics
+      hr
+    .container
+      #search-bar.bg-secondary
+        .form-inline
+          div
+            h2 Find an article
+            input.form-control#article-title(type='text', placeholder='Title of article', name='title')
+            //select.custom-select#article-title
+            //  option(selected) Select An Article
+            //  for title in titleList
+            //    option(value=title) title
+            input.btn.btn-outline-light#article-search-btn(type='submit', value='Search')
+
+      #individual-msg-err.err
+      #individual-msg-suc.suc
+
+      #individual-result
+        h2#individual-article-title Article title:
+        h2#individual-revision-count Num of reversion:
+
+        table.table.table-hover
+          thead.table-primary
+            tr
+            h5 Top 5 Contributors
+            th Username
+            th Contribution
+          tbody#individual-tbody
+            // each editor in topFiveEditors
+            //   tr
+            //     td= editor.editor
+            //     td= editor.revs.length
+
+      #individual-charts.row
+        .col-md-10.col-lg-10.offset-md-1.offset-lg-1
+          nav
+            .nav.nav-tabs#nav-tab(role='tablist')
+              a.nav-link.nav-item.active#chart-1-tab(data-toggle='tab', href='#chart-one', role='tab', aria-controls='chart-one', aria-selected='true') Chart 1
+              a.nav-link.nav-item#chart-2-tab(data-toggle='tab', href='#chart-two', role='tab', aria-controls='chart-two', aria-selected='false') Chart 2
+              a.nav-link.nav-item#chart-3-tab(data-toggle='tab', href='#chart-three', role='tab', aria-controls='chart-three', aria-selected='false') Chart 3
+          .tab-content#nav-tabContent
+            .tab-pane.fade.active.show#chart-one(role='tabpanel', aria-labelledby='chart-1-tab')
+              canvas#chart-1
+            .tab-pane.fade#chart-two(role='tabpanel', aria-labelledby='chart-2-tab')
+              canvas#chart-2
+            .tab-pane.fade#chart-three(role='tabpanel', aria-labelledby='chart-3-tab')
+              canvas#chart-3

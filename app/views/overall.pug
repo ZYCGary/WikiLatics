@@ -1,0 +1,131 @@
+div.panel
+  div.panel-body
+
+    // Article Rank
+    div#overall-analytics
+      h1 Overall Analytics
+      hr
+      div
+        div#byRevision.content
+          h2 Article Rank By Reversion
+          .form-inline
+            input.form-control#rank(type='text', placeholder='Num of articles', name='rank')
+            input.btn.btn-outline-primary#rank-search-btn(type='submit', value='Search')
+
+          div.content-body.row
+            div.col-md-6#max-reversion
+              table.table.table-hover
+                thead.table-primary
+                  tr
+                    h5#maxRev-th Top #{rank} Articles With Most Number Of Reversions
+                  th #
+                  th Article
+                  th Num of reversion
+                  tbody#maxRev-tbody
+                    -let i=1;
+                    for  article in maxRev
+                      tr
+                        td= i
+                        td= article.title
+                        td= article.revCount
+                      -i++;
+
+            div.col-md-6#min-reversion
+              table.table.table-hover
+                thead.table-primary
+                  tr
+                    h5#minRev-th Top #{rank} Articles With Least Number Of Reversions
+                  th #
+                  th Article
+                  th Num of reversion
+                tbody#minRev-tbody
+                  -i=1;
+                  for  article in minRev
+                    tr
+                      td= i
+                      td= article.title
+                      td= article.revCount
+                    -i++;
+
+        div#byUser.content
+          h2 Article Rank By User
+          div.content-body.row
+            div.col-md-6#max-users
+              table.table.table-hover
+                thead.table-primary
+                  tr
+                    h5 The Article Edited By Most Registered Users
+                  th #
+                  th Article
+                  th Num of users
+                tbody
+                  tbody
+                    tr
+                      td 1
+                      td= maxUser[0].title
+                      td= maxUser[0].userCount
+
+            div.col-md-6#min-users
+              table.table.table-hover
+                thead.table-primary
+                  tr
+                    h5 The Article Edited By Least Registered Users
+                  th #
+                  th Article
+                  th Num of users
+                tbody
+                  tbody
+                    tr
+                      td 1
+                      td= minUser[0].title
+                      td= minUser[0].userCount
+
+        div#byHistory.content
+          h2 Article Rank By History
+          div.content-body.row
+            div.col-md-6#max-history
+              table.table.table-hover
+                thead.table-primary
+                  tr
+                    h5 Top 3 Articles With Longest History
+                  th #
+                  th Article
+                  th History (year)
+                tbody
+                  -i=1;
+                  for  article in maxHist
+                    tr
+                      td= i
+                      td= article.title
+                      td= article.history
+                    -i++;
+
+            div.col-md-6#min-history
+              table.table.table-hover
+                thead.table-primary
+                  tr
+                    h5 Top 3 Articles With shortest History
+                  th #
+                  th Article
+                  th History (year)
+                tbody
+                  -i=1;
+                  for  article in minHist
+                    tr
+                      td= i
+                      td= article.title
+                      if article.history === 0
+                        td #{'< 1'}
+                      else
+                        td= article.history
+                    -i++;
+
+    // Charts
+    div#overall-charts
+      h1 Overall Charts
+      hr
+      .container
+        button.btn.btn-success#overall-switch-btn Switch Chart Type
+        p#loading-msg Loading charts...
+        canvas#overall-barChart
+        canvas#overall-pieChart
