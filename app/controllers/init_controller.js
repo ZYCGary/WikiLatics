@@ -25,6 +25,7 @@ exports.initArticles = function (req, res, next) {
     let articles = [];
 
     console.log('Creating articles.JSON...');
+    // console.log(titleList)
 
     (function iterator1(i) {
         if (i === titleList.length) {
@@ -66,6 +67,7 @@ exports.initArticles = function (req, res, next) {
                         anon: item.anon,
                         title: item.title
                     };
+                    // console.log(article)
                     articles.push(article);
                 });
                 console.log('Iteration ' + i, articles.length);
@@ -135,18 +137,19 @@ exports.initUsers = function (req, res, next) {
 };
 
 
-/** initiate article title list */
+/** initiate article title list
 exports.initTitleList = function (req, res, next) {
     console.log('Initiating the list of article titles...');
 
     let list = fs.readdirSync('./public/dataset/revisions');
     list.forEach(function (fileName) {
+        // console.log(fileName)
         titleList.push(fileName.slice(0, fileName.length - 5));
     });
 
     console.log('The list of article titles have been initiated!\n');
     next();
-};
+};*/
 
 
 /** get count of reversion */
@@ -207,6 +210,7 @@ let getUserCount = function (title, rank, userList) {
 
 /** get oldest timestamp */
 let getOldest = function (title) {
+    console.log(title)
     return new Promise(function (resolve) {
         Title.getCollection(title).findOne().sort('timestamp').exec(function (err, post) {
             let oldest = post.timestamp.substring(0, 4);
@@ -232,9 +236,9 @@ let getHistory = function (title, rank, oldest) {
 let addIntoRanks = function (title, rank) {
     return new Promise(function () {
         Rank.update(
-            {title: rank.title},
-            {revCount: rank.revCount, userCount: rank.userCount, history: rank.history},
-            {upsert: true},
+            { title: rank.title },
+            { revCount: rank.revCount, userCount: rank.userCount, history: rank.history },
+            { upsert: true },
             (err) => {
                 if (err) {
                     throw err;
@@ -264,8 +268,8 @@ let updateRank = (title, userList) => {
         .then(function (oldest) {
             return getHistory(title, rank, oldest);
         }).then(function (rank) {
-        addIntoRanks(title, rank);
-    });
+            addIntoRanks(title, rank);
+        });
 };
 
 exports.updateRank = (title, userList) => {
@@ -276,7 +280,7 @@ exports.updateRank = (title, userList) => {
 /** get reversion count, user count and history of each article, then export them into a JSON file.
  *  this function is used to refresh ranks collection in database. */
 exports.initRanks = function (req, res, next) {
-    console.log('Initiating collection \"ranks...\"');
+    console.log('Initiating collection \"ranks\"...');
 
     let tamp = JSON.parse(fs.readFileSync('./public/consts/adminsAndBots.json', 'utf-8'));
     adminsAndBots = tamp.admin.concat(tamp.bot);
