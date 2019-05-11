@@ -21,6 +21,8 @@
 
 Now, you are ready for the initialisation
 
-Last step: Go to **http://localhost:3000/init**, the initialisation will automatically execute, and direct you back to the homepage (You can check the execution process in the console board)
+### - Go to **http://localhost:3000/init**, the initialisation will automatically execute, and direct you back to the homepage (You can check the execution process in the console board)
+
+### - Import /public/consts/articles.json into the database
 
 Now, you can use all the functionalities and analyse the data! :beers:
