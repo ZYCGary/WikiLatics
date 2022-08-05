@@ -14,7 +14,7 @@
     "express-session": "^1.16.1",
     "gitignore": "^0.6.0",
     "http-errors": "~1.6.2",
-    "mongoose": "^5.5.7",
+    "mongoose": "^5.7.5",
     "morgan": "^1.9.1",
     "pug": "^2.0.3",
     "request": "^2.88.0"
